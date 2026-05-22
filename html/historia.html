@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História - HyperPulse Unbound</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+
+<nav>
+    <div class="menu">
+        <a href="../index.html">Início</a>
+        <a href="historia.html">História</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="mundo.html">Mundo</a>
+        <a href="guia-de-leitura.html">Guia de Leitura</a>
+        <a href="nota-do-autor.html">Nota do Autor</a>     
+    </div>
+</nav>
+
+<section>
+    <h1>História</h1>
+    <img src="../imagens/historia.jpeg" alt="História" width="600" height="600">
+    <p>Em uma linha do tempo alternativa, a humanidade alcançou níveis extremos de tecnologia muito antes do esperado. Durante o surgimento dos primeiros ancestrais humanos, algo estranho alterou seu DNA, criando uma variação genética que se manifestaria séculos depois. Como resultado, alguns indivíduos passaram a nascer com habilidades extraordinárias, tornando-se super-humanos, enquanto outros sofriam mutações genéticas instáveis, transformando-se em criaturas monstruosas imprevisíveis, muitas vezes originadas por colapsos genéticos, emoções extremas, experimentos científicos, exposição energética ou obsessões levadas ao limite. Nesse mundo, grandes conflitos globais também ocorreram, incluindo guerras equivalentes às Guerras Mundiais, travadas com armas muito mais avançadas e lideradas por figuras históricas semelhantes às do nosso mundo, porém conhecidas por nomes completamente diferentes. Ao longo do século XX, o planeta entrou em um período de reconstrução e progresso acelerado, mas esse mesmo avanço permitiu o surgimento de organizações perigosas, líderes tirânicos e ameaças cada vez mais extremas. Diante desse cenário instável, Igneus Kane, Aria Bastos, Drake Harper, Gale Skylark e Selena Ravenscroft se uniram para formar os Pulsebreakers, uma equipe de heróis dedicada a enfrentar supervilões, criaturas monstruosas, tecnologias fora de controle e qualquer força capaz de levar o mundo à beira da extinção.</p>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025-<span id="anoAtual"></span> HyperPulse Unbound. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const ano = new Date().getFullYear();
+document.getElementById("anoAtual").textContent = ano;
+
+document.querySelectorAll("img").forEach(img => {
+  if (!img.closest("section:first-of-type")) {
+    img.setAttribute("loading", "lazy");
+  }
+});
+</script>
+
+</body>
+</html>

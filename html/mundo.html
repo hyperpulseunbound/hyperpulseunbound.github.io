@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo - HyperPulse Unbound</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+
+<nav>
+    <div class="menu">
+        <a href="../index.html">Início</a>
+        <a href="historia.html">História</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="mundo.html">Mundo</a>
+        <a href="guia-de-leitura.html">Guia de Leitura</a>
+        <a href="nota-do-autor.html">Nota do Autor</a>        
+    </div>
+</nav>
+
+<section>
+    <h1>Mundo</h1>
+    <img src="../imagens/mundo.jpeg" alt="Mundo" width="600" height="600">
+    <p>O mundo de HyperPulse Unbound é feito de contrastes fortes, onde tecnologia avançada existe lado a lado com mistérios arcanos muito antigos. Parte da história acontece no Canadá, em lugares como Skyreach City, onde os Pulsebreakers tentam levar uma vida comum, e no Pulse Bastion, a base e o lar da equipe escondida em uma floresta ao norte da cidade. Mas a trama vai muito além disso. A jornada leva os protagonistas pelos quatro cantos do mundo, passando por desertos brutais, selvas fechadas, cidades futuristas, ruínas antigas, vulcões ativos, cavernas perigosas, terras congeladas, planetas alienígenas e até dimensões paralelas onde as regras da realidade simplesmente não fazem sentido.</p>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025-<span id="anoAtual"></span> HyperPulse Unbound. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const ano = new Date().getFullYear();
+document.getElementById("anoAtual").textContent = ano;
+
+document.querySelectorAll("img").forEach(img => {
+  if (!img.closest("section:first-of-type")) {
+    img.setAttribute("loading", "lazy");
+  }
+});
+</script>
+
+</body>
+</html>

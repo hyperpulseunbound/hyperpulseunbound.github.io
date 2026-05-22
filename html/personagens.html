@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagens - HyperPulse Unbound</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+
+<nav>
+    <div class="menu">
+        <a href="../index.html">Início</a>
+        <a href="historia.html">História</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="mundo.html">Mundo</a>
+        <a href="guia-de-leitura.html">Guia de Leitura</a>
+        <a href="nota-do-autor.html">Nota do Autor</a>        
+    </div>
+</nav>
+
+<section>
+    <h1>Personagens</h1>
+    <img src="../imagens/personagens.jpeg" alt="Personagens" width="600" height="600">
+    <p>Este é um universo enorme, cheio de vida e totalmente imprevisível. Nele existem dezenas de heróis, cada um com poderes únicos, histórias próprias e motivos bem diferentes para lutar. Do outro lado, há incontáveis vilões, alguns são inimigos cruéis do dia a dia, enquanto outros representam ameaças capazes de colocar o mundo inteiro em risco. Por enquanto, aqui no site, você conhecerá a história de apenas alguns personagens selecionados, o suficiente para ter um gostinho dos conflitos, dos mistérios e da grandiosidade desse universo épico.</p>
+
+    <div class="secao-link">
+        <a href="pulsebreakers.html" class="link">Pulsebreakers</a>
+        <a href="sentinel-exo-force.html" class="link">Sentinel Exo-Force (S.E.F.)</a>
+        <a href="outros-personagens.html" class="link">Outros Personagens</a>
+        <a href="anti-herois-e-anti-viloes.html" class="link">Anti-Heróis e Anti-Vilões</a>              
+        <a href="dark-mecha-corps.html" class="link">Dark Mecha Corps (D.M.C.)</a>
+        <a href="viloes-recorrentes.html" class="link">Vilões Recorrentes</a>       
+        <a href="tecnologias-e-sistemas.html" class="link">Tecnologias e Sistemas</a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025-<span id="anoAtual"></span> HyperPulse Unbound. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const ano = new Date().getFullYear();
+document.getElementById("anoAtual").textContent = ano;
+
+document.querySelectorAll("img").forEach(img => {
+  if (!img.closest("section:first-of-type")) {
+    img.setAttribute("loading", "lazy");
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - HyperPulse Unbound</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+
+<nav>
+    <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="html/historia.html">História</a>
+        <a href="html/personagens.html">Personagens</a>
+        <a href="html/capitulos.html">Capítulos</a>
+        <a href="html/mundo.html">Mundo</a>
+        <a href="html/guia-de-leitura.html">Guia de Leitura</a>
+        <a href="html/nota-do-autor.html">Nota do Autor</a>       
+    </div>
+</nav>
+
+<section>
+    <h1>Início</h1>
+    <img src="./imagens/hyperpulseunbound.jpg" alt="HyperPulse Unbound" width="600" height="600">
+    <p>HyperPulse Unbound começou como um monte de ideias soltas e rascunhos lá no início de 2024, quando a inspiração começou a ganhar forma na minha cabeça. Com o passar dos meses, fui dando vida aos personagens, à história e aos mundos que fazem parte desse universo, tudo inspirado por games, animes e animações dos anos 2000 e 2010 que sempre me marcaram, mas só em 2025 decidi levar isso adiante e transformar essas ideias em algo concreto. A obra mistura anime ocidental, ação, fantasia, ficção científica e romance, refletindo a intensidade, a variedade e a emoção que quero passar em cada capítulo dessa jornada.</p>
+    <p class="aviso"><strong><em>Esta obra é recomendada para maiores de 16 anos devido à presença de violência intensa, linguagem forte e elementos sobrenaturais. Esses aspectos fazem parte da proposta narrativa e ajudam a construir os conflitos, a ação e a evolução dos personagens ao longo da história.</em></strong></p>
+        <div class="secao-link">
+    <a href="https://www.google.com" class="link link-instagram">
+        <i class="fab fa-instagram"></i>&nbsp; Link do Instagram &nbsp;<i class="fab fa-instagram"></i>
+    </a>
+</div>
+</section>
+    
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025-<span id="anoAtual"></span> HyperPulse Unbound. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const ano = new Date().getFullYear();
+document.getElementById("anoAtual").textContent = ano;
+
+document.querySelectorAll("img").forEach(img => {
+  if (!img.closest("section:first-of-type")) {
+    img.setAttribute("loading", "lazy");
+  }
+});
+</script>
+
+</body>
+</html>

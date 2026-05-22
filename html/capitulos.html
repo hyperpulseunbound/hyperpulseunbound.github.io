@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulos - HyperPulse Unbound</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+
+<nav>
+    <div class="menu">
+        <a href="../index.html">Início</a>
+        <a href="historia.html">História</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="mundo.html">Mundo</a>
+        <a href="guia-de-leitura.html">Guia de Leitura</a>
+        <a href="nota-do-autor.html">Nota do Autor</a>        
+    </div>
+</nav>
+
+<section>
+    <h1>Capítulos</h1>
+    <img src="../imagens/capitulos.jpeg" alt="Capítulos" width="600" height="600">
+    <p>A história foi planejada como uma saga longa, dividida em múltiplas temporadas de 15 capítulos, com as temporadas finais contando com mais capítulos. Com forte influência de animes ocidentais, a obra mistura ficção científica, aventura e combates intensos em uma experiência cinematográfica, unindo estilo, escala e personalidade própria. E relaxa, por mais estranho e nonsense que algum capítulo pareça, nenhum deles é filler.</p>
+    <br>
+    <p><strong><em>Todos os capítulos da história e as biografias dos personagens foram escritos e formatados no celular. Por isso, ao abrir os PDFs no computador ou notebook, o texto pode parecer grande demais em telas maiores. Nesse caso, basta ajustar o zoom para uma leitura mais confortável.</em></strong></p>
+    <br>
+    <h3>Selecione uma Temporada</h3>
+    <div class="secao-link">
+        <a href="temporada1.html" class="link">Acessar Temporada 1</a>
+        <a href="temporada2.html" class="link">Acessar Temporada 2</a>
+        <a href="temporada3.html" class="link">Acessar Temporada 3</a>
+        <a href="temporada4.html" class="link">Acessar Temporada 4</a>
+        <a href="temporada5.html" class="link">Acessar Temporada 5</a>
+        <a href="temporada6.html" class="link">Acessar Temporada 6</a>
+        <a href="temporada7.html" class="link">Acessar Temporada 7</a>
+        <a href="temporada8.html" class="link">Acessar Temporada 8</a>
+        <a href="temporada9.html" class="link">Acessar Temporada 9</a>
+        <a href="temporada10.html" class="link">Acessar Temporada 10</a>
+        <a href="temporada11.html" class="link">Acessar Temporada 11</a>
+        <a href="temporada12.html" class="link">Acessar Temporada 12</a>                                                                                                                                                                                                                                 
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025-<span id="anoAtual"></span> HyperPulse Unbound. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const ano = new Date().getFullYear();
+document.getElementById("anoAtual").textContent = ano;
+
+document.querySelectorAll("img").forEach(img => {
+  if (!img.closest("section:first-of-type")) {
+    img.setAttribute("loading", "lazy");
+  }
+});
+</script>
+
+</body>
+</html>

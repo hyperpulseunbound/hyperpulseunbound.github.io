@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota do Autor - HyperPulse Unbound</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+
+<nav>
+    <div class="menu">
+        <a href="../index.html">Início</a>
+        <a href="historia.html">História</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="mundo.html">Mundo</a>
+        <a href="guia-de-leitura.html">Guia de Leitura</a>
+        <a href="nota-do-autor.html">Nota do Autor</a>         
+    </div>
+</nav>
+
+<section>
+    <h1>Nota do Autor</h1>
+    <img src="../imagens/ai.jpeg" alt="AI" width="600" height="600">
+    <p>Antes que alguém pergunte: "por que você usou IA pra criar as imagens em vez de contratar um artista?", vale lembrar o tamanho do que estou construindo aqui. A história conta com dezenas de heróis e incontáveis vilões (entre principais, secundários e minions), sem contar cenários, armas, habilidades e todas as variações de roupas (versão de combate, casual, evolução de traje, etc.). Se eu fosse contratar um artista para ilustrar tudo isso, eu provavelmente precisaria ganhar na loteria primeiro. A intenção nunca foi desvalorizar o trabalho de ninguém. Como criador independente, desenvolvo de forma autoral todo o conceito, personagens e narrativa do projeto, usando a IA apenas como ferramenta de apoio visual para transformar ideias e rascunhos em representações mais claras. Os personagens são originais, criados do zero ou a partir de referências usadas como inspiração e reinterpretadas dentro de um universo próprio, enquanto o roteiro, as reviravoltas e todos os conceitos da história são inteiramente meus.</p>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025-<span id="anoAtual"></span> HyperPulse Unbound. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const ano = new Date().getFullYear();
+document.getElementById("anoAtual").textContent = ano;
+
+document.querySelectorAll("img").forEach(img => {
+  if (!img.closest("section:first-of-type")) {
+    img.setAttribute("loading", "lazy");
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologias e Sistemas - HyperPulse Unbound</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+
+<nav>
+    <div class="menu">
+        <a href="../index.html">Início</a>
+        <a href="historia.html">História</a>
+        <a href="personagens.html">Personagens</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="mundo.html">Mundo</a>
+        <a href="guia-de-leitura.html">Guia de Leitura</a>
+        <a href="nota-do-autor.html">Nota do Autor</a>          
+    </div>
+</nav>
+
+<section>
+    <h1>Tecnologias e Sistemas</h1>
+
+    <div class="fundo-preto">
+        <h2>NeXLink</h2>
+        <img src="../imagens/nexlink.jpg" alt="NeXLink" width="600" height="600">
+        <p><strong><em><span style="color: #e8b923;">História:</span></em></strong> Após a missão em que conheceu Igneus, Drake, Gale e Selena e juntos formaram os Pulsebreakers, Aria desenvolveu o NeXLink como um meio de manter a equipe conectada em qualquer situação. Com o tempo, o NeXLink deixou de ser apenas uma ferramenta e passou a representar confiança, tornando-se um símbolo de aliança entre aqueles que lutam pelo mesmo objetivo. Desde então, todo aliado considerado digno, sejam heróis independentes, equipes ou organizações, recebe um NeXLink, permitindo que forças espalhadas pelo mundo se unam rapidamente sempre que uma emergência surgir.</p>
+    </div>
+
+    <div class="fundo-preto">
+        <h2>Reon</h2>
+        <img src="../imagens/reon.jpeg" alt="Reon" width="600" height="600">
+        <p><strong><em><span style="color: #e8b923;">História:</span></em></strong> No ano de 2003, após décadas marcadas por crises financeiras globais, inflação descontrolada e guerras comerciais, líderes de mais de 180 nações se reuniram na Cúpula Global de Tóquio para criar uma moeda única, estável e acessível para toda a população mundial. Dessa decisão nasceu o Reon, projetado para funcionar como a base de um sistema financeiro global unificado. O Reon passou a operar tanto em formato físico, como notas, cartões e dispositivos portáteis, quanto em transações digitais instantâneas altamente seguras, permitindo que qualquer pessoa enviasse ou recebesse dinheiro em segundos, a qualquer hora e em qualquer lugar do mundo. A transição ocorreu rapidamente, e entre 2003 e 2006 todas as moedas tradicionais, como dólar, euro, real, iene e libra, foram oficialmente descontinuadas, tornando o Reon a única forma de pagamento aceita globalmente, desde pequenas compras do cotidiano até grandes acordos internacionais. Os valores monetários do Reon são representados pelo padrão internacional R₦, utilizado antes dos números para indicar quantias financeiras, como em R₦ 3,00, R₦ 50,00 ou R₦ 10.000,00.</p>
+    </div>        
+</section>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025-<span id="anoAtual"></span> HyperPulse Unbound. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const ano = new Date().getFullYear();
+document.getElementById("anoAtual").textContent = ano;
+
+document.querySelectorAll("img").forEach(img => {
+  if (!img.closest("section:first-of-type")) {
+    img.setAttribute("loading", "lazy");
+  }
+});
+</script>
+
+</body>
+</html>
