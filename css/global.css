@@ -384,3 +384,127 @@ transform: scale(1.05);
     );
   }
 }
+
+.paginacao-clean-ui {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 65px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 250px;
+    font-family: 'Teko', sans-serif;
+}
+
+/* O BOTÃO VISÍVEL */
+.pag-botao-dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #070707;
+    color: #e8b923;
+    border: 2px solid #e8b923;
+    height: 52px;
+    border-radius: 8px;
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    box-shadow: 0px 4px 20px var(--sombra), 0px 0px 10px rgba(232, 185, 35, 0.25);
+    cursor: pointer;
+    list-style: none; /* Esconde a seta padrão do HTML */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pag-botao-dropdown::-webkit-details-marker {
+    display: none; /* Esconde a seta padrão no Safari */
+}
+
+.pag-botao-dropdown:hover {
+    transform: scale(1.05);
+    border-color: #fab000;
+    box-shadow: 0px 6px 25px var(--sombra), 0px 0px 18px rgba(232, 185, 35, 0.5);
+}
+
+.icone-seta {
+    margin-left: 15px;
+    font-size: 0.8em;
+}
+
+/* A CAIXA QUE CAI COM O SCROLL MANDATÓRIO */
+.dropdown-menu-scroll {
+    position: absolute;
+    bottom: 60px; /* Faz o menu abrir para CIMA do botão, evitando tapar o footer */
+    left: 0;
+    width: 100%;
+    background-color: #070707;
+    border: 2px solid #e8b923;
+    border-radius: 8px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.9);
+    z-index: 100;
+    
+    /* A MÁGICA DO SCROLL AQUI: */
+    max-height: 200px; /* Limita a altura para caber cerca de 5 itens */
+    overflow-y: auto;  /* Ativa a barra de rolagem vertical automática */
+}
+
+/* CADA ITEM DA LISTA */
+.dropdown-item {
+    display: block;
+    color: var(--texto-claro);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: var(--cor-botao-hover); /* Efeito Azul Neon no item */
+    color: var(--fundo-preto);
+}
+
+/* Destaque para a página atual dentro da lista */
+.dropdown-item.ativo {
+    color: #e8b923;
+    background-color: rgba(232, 185, 35, 0.1);
+}
+
+/* ESTILIZAÇÃO DA BARRA DE ROLAGEM (Para ficar combinando com o site) */
+.dropdown-menu-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-menu-scroll::-webkit-scrollbar-track {
+    background: #070707;
+    border-radius: 0 8px 8px 0;
+}
+
+.dropdown-menu-scroll::-webkit-scrollbar-thumb {
+    background: #e8b923; /* Trilhinho dourado no scroll */
+    border-radius: 4px;
+}
+
+/* RESPONSIVIDADE MOBILE */
+@media (max-width: 768px) {
+    .custom-dropdown {
+        width: 210px;
+    }
+    .pag-botao-dropdown {
+        height: 48px;
+        font-size: 1.5em;
+    }
+    .dropdown-item {
+        font-size: 1.3em;
+        padding: 12px 20px; /* Área de toque maior para o dedo */
+    }
+}
