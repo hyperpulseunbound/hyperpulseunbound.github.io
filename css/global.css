@@ -400,7 +400,6 @@ transform: scale(1.05);
     font-family: 'Teko', sans-serif;
 }
 
-/* O BOTÃO VISÍVEL */
 .pag-botao-dropdown {
     display: flex;
     justify-content: center;
@@ -415,12 +414,12 @@ transform: scale(1.05);
     letter-spacing: 1.5px;
     box-shadow: 0px 4px 20px var(--sombra), 0px 0px 10px rgba(232, 185, 35, 0.25);
     cursor: pointer;
-    list-style: none; /* Esconde a seta padrão do HTML */
+    list-style: none;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pag-botao-dropdown::-webkit-details-marker {
-    display: none; /* Esconde a seta padrão no Safari */
+    display: none;
 }
 
 .pag-botao-dropdown:hover {
@@ -434,10 +433,9 @@ transform: scale(1.05);
     font-size: 0.8em;
 }
 
-/* A CAIXA QUE CAI COM O SCROLL MANDATÓRIO */
 .dropdown-menu-scroll {
     position: absolute;
-    bottom: 60px; /* Faz o menu abrir para CIMA do botão, evitando tapar o footer */
+    bottom: 60px;
     left: 0;
     width: 100%;
     background-color: #070707;
@@ -445,13 +443,10 @@ transform: scale(1.05);
     border-radius: 8px;
     box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.9);
     z-index: 100;
-    
-    /* A MÁGICA DO SCROLL AQUI: */
-    max-height: 200px; /* Limita a altura para caber cerca de 5 itens */
-    overflow-y: auto;  /* Ativa a barra de rolagem vertical automática */
+    max-height: 200px;
+    overflow-y: auto;
 }
 
-/* CADA ITEM DA LISTA */
 .dropdown-item {
     display: block;
     color: var(--texto-claro);
@@ -469,17 +464,15 @@ transform: scale(1.05);
 }
 
 .dropdown-item:hover {
-    background-color: var(--cor-botao-hover); /* Efeito Azul Neon no item */
+    background-color: var(--cor-botao-hover);
     color: var(--fundo-preto);
 }
 
-/* Destaque para a página atual dentro da lista */
 .dropdown-item.ativo {
     color: #e8b923;
     background-color: rgba(232, 185, 35, 0.1);
 }
 
-/* ESTILIZAÇÃO DA BARRA DE ROLAGEM (Para ficar combinando com o site) */
 .dropdown-menu-scroll::-webkit-scrollbar {
     width: 6px;
 }
@@ -490,11 +483,10 @@ transform: scale(1.05);
 }
 
 .dropdown-menu-scroll::-webkit-scrollbar-thumb {
-    background: #e8b923; /* Trilhinho dourado no scroll */
+    background: #e8b923;
     border-radius: 4px;
 }
 
-/* RESPONSIVIDADE MOBILE */
 @media (max-width: 768px) {
     .custom-dropdown {
         width: 210px;
@@ -505,6 +497,6 @@ transform: scale(1.05);
     }
     .dropdown-item {
         font-size: 1.3em;
-        padding: 12px 20px; /* Área de toque maior para o dedo */
+        padding: 12px 20px;
     }
 }

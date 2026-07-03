@@ -130,6 +130,17 @@ document.querySelectorAll("img").forEach(img => {
     img.setAttribute("loading", "lazy");
   }
 });
+document.addEventListener('click', function(evento) {
+    const dropdown = document.querySelector('.custom-dropdown');
+    
+    // Verifica se o dropdown realmente existe na página atual para evitar erros
+    if (dropdown) {
+        // Se o clique do usuário foi FORA do menu, nós fechamos ele
+        if (!dropdown.contains(evento.target)) {
+            dropdown.removeAttribute('open');
+        }
+    }
+});
 </script>
 
 </body>
