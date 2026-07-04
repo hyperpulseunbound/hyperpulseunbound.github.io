@@ -404,6 +404,9 @@ transform: scale(1.05);
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    position: relative;
+    padding: 0;
     background-color: #070707;
     color: #e8b923;
     border: 2px solid #e8b923;
@@ -418,6 +421,12 @@ transform: scale(1.05);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.pag-botao-dropdown::before {
+    content: '';
+    display: block;
+    width: 22px; 
+}
+
 .pag-botao-dropdown::-webkit-details-marker {
     display: none;
 }
@@ -429,8 +438,9 @@ transform: scale(1.05);
 }
 
 .icone-seta {
-    margin-left: 15px;
     font-size: 0.8em;
+    width: 22px;
+    text-align: center;
 }
 
 .dropdown-menu-scroll {
