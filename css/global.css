@@ -81,12 +81,14 @@ nav {
     border-radius: 5px;
 }
 
-.menu a:hover::before {
+.menu a:hover::before,
+.menu a.ativo::before {
     opacity: 1;
 }
 
-.menu a:hover {
-    color: #0e0e0e;
+.menu a:hover,
+.menu a.ativo {
+    color: #0e0e0e; /* Deixa o texto preto */
 }
 
 /* Seções */
@@ -174,14 +176,31 @@ img {
     box-shadow: 0px 4px 10px var(--sombra);
     font-size: 1.2em;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #ff5e00, #fab000); 
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.link:hover::before {
+    opacity: 1;
 }
 
 .link:hover {
-background-image: linear-gradient(135deg, #ff5e00, #cc3a53);
-    color: #ffffff;
+    color: #070707; /* Letra preta no hover */
     transform: scale(1.05);
-    box-shadow: 0px 4px 15px rgba(204, 58, 83, 0.4);
+    box-shadow: 0px 4px 15px rgba(255, 94, 0, 0.4);
 }
 
 /* Box */
@@ -258,23 +277,66 @@ footer {
 
 /* Botão de download dos capítulos */
 .botao-download {
-display: inline-block;
-background-color: var(--cor-botao);
-color: var(--cor-texto-botao);
-text-decoration: none;
-padding: 12px 25px;
-margin-top: 20px;
-border-radius: 8px;
-font-size: 1.1em;
-font-weight: bold;
-box-shadow: 0px 4px 10px var(--sombra);
-transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    background-color: var(--cor-botao);
+    color: var(--cor-texto-botao);
+    text-decoration: none;
+    padding: 12px 25px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px var(--sombra);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
-    
+
+/* Camada do Gradiente Dourado "Arcade / Game" */
+.botao-download::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* #ffe033 (amarelo-ouro aceso) descendo para #d49500 (âmbar/dourado rico) */
+    background: linear-gradient(135deg, #ffe033 0%, #d49500 100%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+/* Estado Hover (Mouse por cima) no Computador */
+.botao-download:hover::before {
+    opacity: 1;
+}
+
 .botao-download:hover {
-background-color: var(--cor-botao-hover);
-color: var(--fundo-preto);
-transform: scale(1.05);
+    color: #070707; /* Texto em preto profundo para contraste imediato */
+    transform: scale(1.05);
+    /* Brilho dourado refinado, na medida certa */
+    box-shadow: 0px 6px 20px rgba(212, 149, 0, 0.45);
+}
+
+/* Ajustes para Celulares (Para manter o toque responsivo e macio) */
+@media (max-width: 768px) {
+    .fundo-preto .botao-download {
+        font-size: 0.95em;
+        padding: 8px 16px;
+    }
+
+    .botao-download:hover {
+        transform: none;
+    }
+
+    .botao-download:active::before {
+        opacity: 1;
+    }
+
+    .botao-download:active {
+        color: #070707;
+        transition: color 0.1s ease;
+    }
 }
 
 /* Responsividade */
@@ -494,8 +556,8 @@ transform: scale(1.05);
 }
 
 .dropdown-item:hover {
-    background-color: var(--cor-botao-hover);
-    color: var(--fundo-preto);
+    background: linear-gradient(135deg, #e8b923, #fab000);
+    color: #070707;
 }
 
 .dropdown-item.ativo {
