@@ -14,14 +14,25 @@
   src: url('../fonts/Teko-Bold.woff2') format('woff2');
 }
 
+/* ========================================================= */
+/*  NOVO CÓDIGO AQUI: Bloqueio de tamanho/inflação do Firefox */
+/* ========================================================= */
+html, body, * {
+    -webkit-text-size-adjust: 100% !important;
+    -moz-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+}
+
+p, a, h1, h2, h3, h4, span, div, section, nav {
+    max-height: 999999px;
+}
+/* ========================================================= */
+
+/* 2. Suas regras gerais continuam daqui em diante */
 html {
     background-color: #0e0e0e; /* Evita clarão branco antes de carregar o body */
     overflow-y: scroll;
     scrollbar-gutter: stable;
-    
-    /* Impede que Firefox e Chrome inflem o tamanho do texto no celular */
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
 }
 
 :root {
