@@ -18,6 +18,10 @@ html {
     background-color: #0e0e0e; /* Evita clarão branco antes de carregar o body */
     overflow-y: scroll;
     scrollbar-gutter: stable;
+    
+    /* Impede que Firefox e Chrome inflem o tamanho do texto no celular */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 :root {
