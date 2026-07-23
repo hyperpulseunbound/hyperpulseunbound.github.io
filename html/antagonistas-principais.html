@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antagonistas Principais - HyperPulse Unbound</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Teko:wght@300..700&display=block" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+
+<nav>
+    <div class="menu">
+        <a href="../index.html">Início</a>
+        <a href="historia.html">História</a>
+        <a href="personagens.html" class="ativo">Personagens</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="mundo.html">Mundo</a>
+        <a href="guia-de-leitura.html">Guia de Leitura</a>
+        <a href="nota-do-autor.html">Nota do Autor</a>          
+    </div>
+</nav>
+
+<section>
+    <h1>Antagonistas Principais</h1>
+
+    <div class="fundo-preto">
+        <h2>Deadlock</h2>
+        <img src="../imagens/deadlock.jpeg" alt="Deadlock" width="600" height="600">
+        <p><strong><em><span style="color: #e8b923;">Idade:</span></em></strong> 54 anos</p>
+        <br>        
+        <p><strong><em><span style="color: #e8b923;">História:</span></em></strong> Slayne Morrison Nyx nasceu na Inglaterra e, ainda adolescente, integrou o Esquadrão Iron Duke, onde foi submetido a experimentos militares que lhe concederam força e resistência sobre-humanas. Durante uma missão encoberta, foi abandonado pelos próprios comandantes para apagar qualquer ligação do governo com a operação, traição que deu origem a Deadlock, um estrategista frio e manipulador obcecado por impor ordem absoluta ao mundo através do controle total. Anos depois, ao descobrir a genialidade de Aria Bastos, armou o ataque robótico a Campo Solaris e a adotou após a tragédia, treinando-a como uma combatente de elite e mente estratégica para seu império. Porém, aos 20 anos, Aria descobriu a verdade sobre seu passado e o abandonou, tornando-se sua maior falha. Hoje, ao lado de sua misteriosa mordoma Glockenia Malice, uma mulher de origem demoníaca, Deadlock comanda legiões de Dead-Bots, move-se nas sombras contra os Pulsebreakers e continua avançando com seus planos de dominação mundial.</p>
+    </div>    
+
+    <div class="fundo-preto">
+        <h2>Ronavar</h2>
+        <img src="../imagens/ronavar.jpeg" alt="Ronavar" width="600" height="600">
+        <p><strong><em><span style="color: #e8b923;">Idade:</span></em></strong> Desconhecida</p>
+        <br>        
+        <p><strong><em><span style="color: #e8b923;">História:</span></em></strong> Ronavar é o enigmático governante de Zakonat, uma pequena nação do Leste Europeu. Quando o país estava à beira do colapso sob um regime comunista corrupto e autoritário, ele surgiu repentinamente e liderou um golpe de Estado em uma única noite, usando suas habilidades arcanas para matar o ditador e derrubar todo o governo. No dia seguinte, assumiu o poder prometendo ordem, segurança e reconstrução, e sob seu comando, Zakonat transformou-se em uma potência tecnológica e militar, com baixos índices de criminalidade, economia forte e infraestrutura avançada. Convencido de que a humanidade só pode prosperar sob uma autoridade firme, Ronavar governa com controle absoluto e busca expandir sua influência além das fronteiras de seu país. Enquanto os zakonatianos o veneram como o salvador da nação, grande parte do mundo o vê como um líder perigoso e imprevisível. Sua idade e origem permanecem desconhecidas, e ele raramente é visto sem seus leais companheiros, Epimetheus e Elpis.</p>
+    </div>        
+</section>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025-<span id="anoAtual"></span> HyperPulse Unbound. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const ano = new Date().getFullYear();
+document.getElementById("anoAtual").textContent = ano;
+
+document.querySelectorAll("img").forEach(img => {
+  if (!img.closest("section:first-of-type")) {
+    img.setAttribute("loading", "lazy");
+  }
+});
+</script>
+
+</body>
+</html>

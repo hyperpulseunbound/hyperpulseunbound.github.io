@@ -1,5 +1,6 @@
 html {
     overflow-y: scroll;
+    scrollbar-gutter: stable; /* Mantém o espaço da scrollbar reservado sem mover a centralização */
 }
 
 :root {
@@ -71,9 +72,11 @@ nav {
     position: relative;
     z-index: 1;
     overflow: hidden;
+    white-space: nowrap; /* Trava as letras para não mudarem de largura */
     transition: color 0.3s ease; 
 }
 
+/* Camada do Gradiente que aparece no Hover e no Ativo */
 .menu a::before {
     content: '';
     position: absolute;
@@ -85,9 +88,16 @@ nav {
     border-radius: 5px;
 }
 
+/* Ativa o gradiente ao passar o mouse ou na página atual */
 .menu a:hover::before,
 .menu a.ativo::before {
     opacity: 1;
+}
+
+/* Deixa o texto preto no hover ou na página ativa */
+.menu a:hover,
+.menu a.ativo {
+    color: #0e0e0e;
 }
 
 .menu a:hover,
@@ -99,6 +109,7 @@ nav {
 section {
     width: 85%;
     max-width: 900px;
+    min-height: 750px; /* Mantém a caixa grande e estável desde o início */
     padding: 25px;
     background: #12131C;
     border: 2px solid var(--borda-clara);
@@ -152,6 +163,7 @@ p[style*="font-size: 1.4em"] {
 img {
     width: 100%;
     max-width: 600px;
+    aspect-ratio: 1 / 1; /* Reserva a altura exata da imagem antes de carregar */
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
