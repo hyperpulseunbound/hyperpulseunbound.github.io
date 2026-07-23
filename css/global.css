@@ -15,8 +15,9 @@
 }
 
 html {
+    background-color: #0e0e0e; /* Evita clarão branco antes de carregar o body */
     overflow-y: scroll;
-    scrollbar-gutter: stable; /* Mantém o espaço da scrollbar reservado sem mover a centralização */
+    scrollbar-gutter: stable;
 }
 
 :root {
