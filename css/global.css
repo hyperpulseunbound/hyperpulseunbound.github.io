@@ -2,15 +2,15 @@
   font-family: 'Merriweather';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
-  src: url('../fonts/Merriweather-Regular2.woff2') format('woff2');
+  font-display: block;
+  src: url('../fonts/Merriweather-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Teko';
   font-style: normal;
   font-weight: 700;
-  font-display: optional;
+  font-display: block;
   src: url('../fonts/Teko-Bold.woff2') format('woff2');
 }
 
