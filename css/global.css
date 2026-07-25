@@ -1,21 +1,17 @@
 @font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/Merriweather-Regular.woff2') format('woff2');
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Merriweather-Regular.woff2') format('woff2');
+    font-display: block
 }
 
 @font-face {
-  font-family: 'Teko';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/Teko-Bold.woff2') format('woff2');
-}
-
-html {
-    background-color: #0e0e0e; /* Evita clarão branco antes de carregar o body */
-    overflow-y: scroll;
-    scrollbar-gutter: stable;
+    font-family: 'Teko';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/Teko-Bold.woff2') format('woff2');
+    font-display: block
 }
 
 :root {
@@ -31,7 +27,12 @@ html {
     --cor-botao: #444444;
     --cor-botao-hover: #00bfff;
     --cor-texto-botao: #ffffff;
-    
+}
+
+html {
+    background-color: #0e0e0e;
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -43,7 +44,6 @@ body {
     align-items: center;
 }
 
-/* Navegação */
 nav {
     width: 100%;
     background-color: var(--fundo-secao);
@@ -56,18 +56,10 @@ nav {
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid transparent;
-    background-image:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(214, 174, 96, 0.6),
-      rgba(255, 215, 130, 0.9),
-      rgba(214, 174, 96, 0.6),
-      transparent
-    );
-  background-repeat: no-repeat;
-  background-size: 100% 2px;
-  background-position: bottom;
+    background-image: linear-gradient(to right, transparent, rgba(214, 174, 96, 0.6), rgba(255, 215, 130, 0.9), rgba(214, 174, 96, 0.6), transparent);
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    background-position: bottom;
 }
 
 .menu {
@@ -87,44 +79,35 @@ nav {
     position: relative;
     z-index: 1;
     overflow: hidden;
-    white-space: nowrap; /* Trava as letras para não mudarem de largura */
-    transition: color 0.3s ease; 
+    white-space: nowrap;
+    transition: color 0.3s ease;
 }
 
-/* Camada do Gradiente que aparece no Hover e no Ativo */
 .menu a::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #ff5e00, #fab000); 
+    background: linear-gradient(135deg, #ff5e00, #fab000);
     opacity: 0;
     z-index: -1;
     transition: opacity 0.3s ease;
     border-radius: 5px;
 }
 
-/* Ativa o gradiente ao passar o mouse ou na página atual */
 .menu a:hover::before,
 .menu a.ativo::before {
     opacity: 1;
 }
 
-/* Deixa o texto preto no hover ou na página ativa */
 .menu a:hover,
 .menu a.ativo {
     color: #0e0e0e;
 }
 
-.menu a:hover,
-.menu a.ativo {
-    color: #0e0e0e; /* Deixa o texto preto */
-}
-
-/* Seções */
 section {
     width: 85%;
     max-width: 900px;
-    min-height: 750px; /* Mantém a caixa grande e estável desde o início */
+    min-height: 750px;
     padding: 25px;
     background: #12131C;
     border: 2px solid var(--borda-clara);
@@ -143,30 +126,17 @@ h1 {
     letter-spacing: 1px;
 }
 
-h3 {
-    font-family: 'Teko', sans-serif;
-    font-size: 2.4em;
-    color: #fab000;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
+h2 {
+    font-size: 3.0em;
 }
 
-h1 {
-    font-size: 3.5em;
-}
-
-h3 {
-    font-size: 2.4em;
+h4 {
+    font-size: 2.5em;
 }
 
 p {
     color: var(--texto-claro);
     line-height: 1.8;
-}
-
-p[style*="font-size: 1.4em"] {
-    font-size: 1.1em;
-    line-height: 1.7;
 }
 
 .aviso {
@@ -178,7 +148,7 @@ p[style*="font-size: 1.4em"] {
 img {
     width: 100%;
     max-width: 600px;
-    aspect-ratio: 1 / 1; /* Reserva a altura exata da imagem antes de carregar */
+    aspect-ratio: 1 / 1;
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -187,7 +157,6 @@ img {
     background-color: #111;
 }
 
-/* Links */
 .secao-link {
     display: flex;
     flex-direction: column;
@@ -218,7 +187,7 @@ img {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #ff5e00, #fab000); 
+    background: linear-gradient(135deg, #ff5e00, #fab000);
     opacity: 0;
     z-index: -1;
     transition: opacity 0.3s ease;
@@ -230,22 +199,18 @@ img {
 }
 
 .link:hover {
-    color: #070707; /* Letra preta no hover */
+    color: #070707;
     transform: scale(1.05);
     box-shadow: 0px 4px 15px rgba(255, 94, 0, 0.4);
 }
 
-/* Box */
 .fundo-preto {
     background-color: #070707;
     padding: 30px;
     margin: 20px auto;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-        inset 0 0 28px rgba(0, 0, 0, 0.85),
-        0 8px 25px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), inset 0 0 28px rgba(0, 0, 0, 0.85), 0 8px 25px rgba(0, 0, 0, 0.75);
     width: 95%;
     max-width: 900px;
     text-align: center;
@@ -260,20 +225,15 @@ img {
     text-shadow: 1px 1px 5px var(--sombra);
 }
 
-h2 {
-    font-size: 3.0em;
-}
-
-h4 {
-    font-size: 2.5em;
-}
-
 .fundo-preto p {
     line-height: 1.8;
     text-align: center;
 }
 
-/* Footer */
+.fundo-preto h4.sinopse-titulos {
+    color: #e8b923;
+}
+
 footer {
     width: 100%;
     background-color: var(--fundo-secao);
@@ -282,18 +242,10 @@ footer {
     box-shadow: 0px 4px 10px var(--sombra);
     margin-top: 40px;
     border-top: 1px solid transparent;
-    background-image:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(214, 174, 96, 0.5),
-      rgba(255, 215, 130, 0.8),
-      rgba(214, 174, 96, 0.5),
-      transparent
-    );
-  background-repeat: no-repeat;
-  background-size: 100% 2px;
-  background-position: top;
+    background-image: linear-gradient(to right, transparent, rgba(214, 174, 96, 0.5), rgba(255, 215, 130, 0.8), rgba(214, 174, 96, 0.5), transparent);
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    background-position: top;
 }
 
 .footer-container p {
@@ -302,12 +254,6 @@ footer {
     margin: 5px 0;
 }
 
-/* Nomes dos Capítulos */
-.fundo-preto h4.sinopse-titulos {
-    color: #e8b923;
-}
-
-/* Botão de download dos capítulos */
 .botao-download {
     display: inline-block;
     background-color: var(--cor-botao);
@@ -325,12 +271,10 @@ footer {
     transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Camada do Gradiente Dourado "Arcade / Game" */
 .botao-download::before {
     content: '';
     position: absolute;
     inset: 0;
-    /* #ffe033 (amarelo-ouro aceso) descendo para #d49500 (âmbar/dourado rico) */
     background: linear-gradient(135deg, #ffe033 0%, #d49500 100%);
     opacity: 0;
     z-index: -1;
@@ -338,15 +282,13 @@ footer {
     border-radius: 8px;
 }
 
-/* Estado Hover (Mouse por cima) no Computador */
 .botao-download:hover::before {
     opacity: 1;
 }
 
 .botao-download:hover {
-    color: #070707; /* Texto em preto profundo para contraste imediato */
+    color: #070707;
     transform: scale(1.05);
-    /* Brilho dourado refinado, na medida certa */
     box-shadow: 0px 6px 20px rgba(212, 149, 0, 0.45);
 }
 
@@ -356,155 +298,6 @@ footer {
     background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.18), transparent);
     margin: 20px auto;
     width: 100%;
-}
-
-/* Ajustes para Celulares (Para manter o toque responsivo e macio) */
-@media (max-width: 768px) {
-    .fundo-preto .botao-download {
-        font-size: 0.95em;
-        padding: 8px 16px;
-    }
-
-    .botao-download:hover {
-        transform: none;
-    }
-
-    .botao-download:active::before {
-        opacity: 1;
-    }
-
-    .botao-download:active {
-        color: #070707;
-        transition: color 0.1s ease;
-    }
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .menu {
-        gap: 8px;
-    }
-
-    .menu a {
-        font-size: 0.9em;
-        padding: 4px 8px;
-    }
-
-    section {
-        width: 95%;
-        padding: 20px;
-        margin-top: 100px;
-    }
-
-    img {
-        max-width: 300px;
-    }
-
-    p {
-        font-size: 0.80em;
-        line-height: 1.6;
-    }
-
-    h1 {
-        font-size: 2.0em;
-    }
-
-    h2, h4 {
-        font-size: 1.8em;
-    }
-    
-    h3 {
-        font-size: 1.8em;
-    }
-    
-
-    .link {
-        font-size: 0.95em !important;
-        padding: 8px 16px !important;
-        width: 80% !important;
-        max-width: 260px !important;
-    }
-
-    .menu a:hover {
-        background-color: inherit;
-        color: inherit;
-    }
-
-    .link:hover {
-        background-color: var(--cor-link);
-        transform: none;
-    }
-
-    .menu a:active {
-        background-color: var(--destaque);
-        color: var(--fundo-escuro);
-        transition: background-color 0.1s ease;
-    }
-
-    .link:active {
-        background-color: var(--destaque);
-        transition: background-color 0.1s ease;
-    }
-
-    .footer-container p {
-        font-size: 0.72em;
-    }
-
-.fundo-preto .botao-download {
-    font-size: 0.95em;
-    padding: 8px 16px;
-}
-    
-    .botao-download:hover {
-    background-color: var(--cor-botao);
-    color: var(--cor-texto-botao);
-    transform: none;
-}
-
-    .botao-download:active {
-    background-color: var(--cor-botao-hover);
-    color: var(--fundo-preto);
-    transition: background-color 0.1s ease;
-}    
-
-    /* Responsividade extra */
-    .fundo-preto {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .fundo-preto h4 {
-        font-size: 1.7em;
-        margin-bottom: 15px;
-    }
-
-@media (max-width: 768px) {
-    .capitulo-em-producao {
-        font-size: 1.4em !important;
-    }
-}
-
-}
-
-.texto-extra {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-  .texto-extra {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    background: linear-gradient(
-      180deg,
-      #121212 0%,
-      #0e0e0e 100%
-    );
-  }
 }
 
 .paginacao-clean-ui {
@@ -546,7 +339,7 @@ footer {
 .pag-botao-dropdown::before {
     content: '';
     display: block;
-    width: 22px; 
+    width: 22px;
 }
 
 .pag-botao-dropdown::-webkit-details-marker {
@@ -620,13 +413,118 @@ footer {
 }
 
 @media (max-width: 768px) {
+    body {
+        background: linear-gradient(180deg, #121212 0%, #0e0e0e 100%);
+    }
+
+    .menu {
+        gap: 8px;
+    }
+
+    .menu a {
+        font-size: 0.9em;
+        padding: 4px 8px;
+    }
+
+    .menu a:hover {
+        background-color: inherit;
+        color: inherit;
+    }
+
+    .menu a:active {
+        background-color: var(--destaque);
+        color: var(--fundo-escuro);
+        transition: background-color 0.1s ease;
+    }
+
+    section {
+        width: 95%;
+        padding: 20px;
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 2.0em;
+    }
+
+    h2, h4 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 0.80em;
+        line-height: 1.6;
+    }
+
+    img {
+        max-width: 300px;
+    }
+
+    .link {
+        font-size: 0.95em !important;
+        padding: 8px 16px !important;
+        width: 80% !important;
+        max-width: 260px !important;
+    }
+
+    .link:hover {
+        background-color: var(--cor-link);
+        transform: none;
+    }
+
+    .link:active {
+        background-color: var(--destaque);
+        transition: background-color 0.1s ease;
+    }
+
+    .fundo-preto {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .fundo-preto h4 {
+        font-size: 1.7em;
+        margin-bottom: 15px;
+    }
+
+    .fundo-preto .botao-download {
+        font-size: 0.95em;
+        padding: 8px 16px;
+    }
+
+    .botao-download:hover {
+        background-color: var(--cor-botao);
+        color: var(--cor-texto-botao);
+        transform: none;
+    }
+
+    .botao-download:active::before {
+        opacity: 1;
+    }
+
+    .botao-download:active {
+        background-color: var(--cor-botao-hover);
+        color: #070707;
+        transition: background-color 0.1s ease, color 0.1s ease;
+    }
+
+    .capitulo-em-producao {
+        font-size: 1.4em !important;
+    }
+
+    .footer-container p {
+        font-size: 0.72em;
+    }
+
     .custom-dropdown {
         width: 210px;
     }
+
     .pag-botao-dropdown {
         height: 48px;
         font-size: 1.5em;
     }
+
     .dropdown-item {
         font-size: 1.3em;
         padding: 12px 20px;

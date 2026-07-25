@@ -81,7 +81,7 @@
 
 <div class="paginacao-clean-ui">
     <details class="custom-dropdown">
-        <summary class="pag-botao-dropdown">Página 3<i class="fa-solid fa-caret-down icone-seta"></i></summary>
+        <summary class="pag-botao-dropdown">Página 2<i class="fa-solid fa-caret-down icone-seta"></i></summary>
         <div class="dropdown-menu-scroll">
             <a href="capitulos-p1.html" class="dropdown-item">Página 1</a>
             <a href="capitulos-p2.html" class="dropdown-item ativo">Página 2</a>
@@ -115,10 +115,7 @@ document.querySelectorAll("img").forEach(img => {
 });
 document.addEventListener('click', function(evento) {
     const dropdown = document.querySelector('.custom-dropdown');
-    
-    // Verifica se o dropdown realmente existe na página atual para evitar erros
     if (dropdown) {
-        // Se o clique do usuário foi FORA do menu, nós fechamos ele
         if (!dropdown.contains(evento.target)) {
             dropdown.removeAttribute('open');
         }
