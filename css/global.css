@@ -2,7 +2,6 @@
   font-family: 'Merriweather';
   font-style: normal;
   font-weight: 400;
-  font-display: block;
   src: url('../fonts/Merriweather-Regular.woff2') format('woff2');
 }
 
@@ -10,7 +9,6 @@
   font-family: 'Teko';
   font-style: normal;
   font-weight: 700;
-  font-display: block;
   src: url('../fonts/Teko-Bold.woff2') format('woff2');
 }
 
