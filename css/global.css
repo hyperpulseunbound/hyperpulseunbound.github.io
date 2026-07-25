@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: optional;
-  src: url('../fonts/Merriweather-Bold.woff2') format('woff2');
+  src: url('../fonts/Merriweather-Regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -350,6 +350,14 @@ footer {
     transform: scale(1.05);
     /* Brilho dourado refinado, na medida certa */
     box-shadow: 0px 6px 20px rgba(212, 149, 0, 0.45);
+}
+
+.divisor-suave {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.18), transparent);
+    margin: 20px auto;
+    width: 100%;
 }
 
 /* Ajustes para Celulares (Para manter o toque responsivo e macio) */
