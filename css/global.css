@@ -94,12 +94,10 @@ nav {
     border-radius: 5px;
 }
 
-.menu a:hover::before,
 .menu a.ativo::before {
     opacity: 1;
 }
 
-.menu a:hover,
 .menu a.ativo {
     color: #0e0e0e;
 }
@@ -194,16 +192,6 @@ img {
     border-radius: 10px;
 }
 
-.link:hover::before {
-    opacity: 1;
-}
-
-.link:hover {
-    color: #070707;
-    transform: scale(1.05);
-    box-shadow: 0px 4px 15px rgba(255, 94, 0, 0.4);
-}
-
 .fundo-preto {
     background-color: #070707;
     padding: 30px;
@@ -282,16 +270,6 @@ footer {
     border-radius: 8px;
 }
 
-.botao-download:hover::before {
-    opacity: 1;
-}
-
-.botao-download:hover {
-    color: #070707;
-    transform: scale(1.05);
-    box-shadow: 0px 6px 20px rgba(212, 149, 0, 0.45);
-}
-
 .divisor-suave {
     border: 0;
     height: 1px;
@@ -346,12 +324,6 @@ footer {
     display: none;
 }
 
-.pag-botao-dropdown:hover {
-    transform: scale(1.05);
-    border-color: #fab000;
-    box-shadow: 0px 6px 25px var(--sombra), 0px 0px 18px rgba(232, 185, 35, 0.5);
-}
-
 .icone-seta {
     font-size: 0.8em;
     width: 22px;
@@ -388,11 +360,6 @@ footer {
     border-bottom: none;
 }
 
-.dropdown-item:hover {
-    background: linear-gradient(135deg, #e8b923, #fab000);
-    color: #070707;
-}
-
 .dropdown-item.ativo {
     color: #e8b923;
     background-color: rgba(232, 185, 35, 0.1);
@@ -411,6 +378,51 @@ footer {
     background: #e8b923;
     border-radius: 4px;
 }
+
+
+/* --- AQUI COMEÇA O BLOCO DE HOVER ADICIONADO --- */
+@media (hover: hover) {
+    .menu a:hover::before {
+        opacity: 1;
+    }
+    
+    .menu a:hover {
+        color: #0e0e0e;
+    }
+    
+    .link:hover::before {
+        opacity: 1;
+    }
+    
+    .link:hover {
+        color: #070707;
+        transform: scale(1.05);
+        box-shadow: 0px 4px 15px rgba(255, 94, 0, 0.4);
+    }
+    
+    .botao-download:hover::before {
+        opacity: 1;
+    }
+    
+    .botao-download:hover {
+        color: #070707;
+        transform: scale(1.05);
+        box-shadow: 0px 6px 20px rgba(212, 149, 0, 0.45);
+    }
+
+    .pag-botao-dropdown:hover {
+        transform: scale(1.05);
+        border-color: #fab000;
+        box-shadow: 0px 6px 25px var(--sombra), 0px 0px 18px rgba(232, 185, 35, 0.5);
+    }
+
+    .dropdown-item:hover {
+        background: linear-gradient(135deg, #e8b923, #fab000);
+        color: #070707;
+    }
+}
+/* --- FIM DO BLOCO DE HOVER --- */
+
 
 @media (max-width: 768px) {
     body {
