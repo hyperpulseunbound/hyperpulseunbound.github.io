@@ -531,13 +531,14 @@ footer {
     }
 }
 
-.menu a.ativo,
-.link.ativo,
-.botao-download.ativo {
+.menu a.clicado,
+.link.clicado,
+.botao-download.clicado {
     color: #070707 !important;
 }
 
-.link.ativo::before,
-.botao-download.ativo::before {
+.menu a.clicado::before,
+.link.clicado::before,
+.botao-download.clicado::before {
     opacity: 1 !important;
 }

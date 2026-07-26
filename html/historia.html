@@ -42,36 +42,39 @@
 </footer>
 
 <script>
-const ano = new Date().getFullYear();
-document.getElementById("anoAtual").textContent = ano;
-
-document.querySelectorAll("img").forEach(img => {
-  if (!img.closest("section:first-of-type")) {
-    img.setAttribute("loading", "lazy");
-  }
-});
-
 document.addEventListener("DOMContentLoaded", () => {
     const linksAnimados = document.querySelectorAll('.menu a, .link, .botao-download');
 
     linksAnimados.forEach(link => {
         link.addEventListener('click', function(event) {
-            if (this.target === '_blank' || !this.href || this.href.includes('#')) {
-                return;
-            }
+  
+            if (!this.href || this.href.includes('#')) return;
 
             event.preventDefault(); 
             const destino = this.href;
-            this.classList.add('ativo');
+            const alvo = this.target;
+            this.classList.add('clicado');
+
             setTimeout(() => {
-                window.location.href = destino;
+                if (alvo === '_blank') {
+                    window.open(destino, '_blank');
+                    this.classList.remove('clicado');
+                } else {
+                    window.location.href = destino;
+                }
             }, 400); 
         });
     });
 });
+
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        document.querySelectorAll('.clicado').forEach(el => {
+            el.classList.remove('clicado');
+        });
+    }
+});
 </script>
 
-</body>
-</html>
 </body>
 </html>
