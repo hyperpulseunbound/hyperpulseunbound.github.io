@@ -530,3 +530,14 @@ footer {
         padding: 12px 20px;
     }
 }
+
+.menu a.ativo,
+.link.ativo,
+.botao-download.ativo {
+    color: #070707 !important;
+}
+
+.link.ativo::before,
+.botao-download.ativo::before {
+    opacity: 1 !important;
+}
