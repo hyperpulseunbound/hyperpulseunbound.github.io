@@ -22,10 +22,8 @@
     --cor-link: #243a5e;
     --sombra: rgba(0, 0, 0, 0.7);
     --borda-clara: #e6e6e6;
-    --fundo-preto: #0d0d0d;
     --cor-titulo: #935fc7;
     --cor-botao: #444444;
-    --cor-botao-hover: #00bfff;
     --cor-texto-botao: #ffffff;
 }
 
@@ -379,7 +377,6 @@ footer {
     border-radius: 4px;
 }
 
-
 /* --- AQUI COMEÇA O BLOCO DE HOVER ADICIONADO --- */
 @media (hover: hover) {
     .menu a:hover::before {
@@ -422,7 +419,6 @@ footer {
     }
 }
 /* --- FIM DO BLOCO DE HOVER --- */
-
 
 @media (max-width: 768px) {
     body {
@@ -515,9 +511,8 @@ footer {
     }
 
     .botao-download:active {
-        background-color: var(--cor-botao-hover);
         color: #070707;
-        transition: background-color 0.1s ease, color 0.1s ease;
+        transition: color 0.1s ease;
     }
 
     .capitulo-em-producao {
