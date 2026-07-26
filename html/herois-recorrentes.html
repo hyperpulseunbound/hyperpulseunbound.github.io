@@ -102,17 +102,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-        document.querySelectorAll('.clicado').forEach(el => {
-            el.classList.remove('clicado');
-            el.blur();
-        });
-        
-        if (document.activeElement) {
-            document.activeElement.blur();
-        }
+window.addEventListener('pageshow', () => {
+    document.querySelectorAll('.clicado').forEach(el => {
+        el.classList.remove('clicado');
+        el.blur();
+    });
+    
+    if (document.activeElement) {
+        document.activeElement.blur();
     }
+
+    document.body.style.pointerEvents = 'none';
+    setTimeout(() => {
+        document.body.style.pointerEvents = '';
+    }, 100);
 });
 </script>
 
