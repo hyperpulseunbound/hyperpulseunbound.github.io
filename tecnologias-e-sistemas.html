@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologias e Sistemas - HyperPulse Unbound</title>
+    <meta property="og:title" content="Tecnologias e Sistemas - HyperPulse Unbound"/>
+    <meta property="og:description" content="Entenda as inovações de HyperPulse Unbound, como o comunicador NeXLink, símbolo de aliança heróica, e o Reon (R₦), a moeda única global."/>
+    <meta property="og:image" content="https://hyperpulseunbound.github.io/imagens/zxcapa10.jpg"/>
+    <meta property="og:url" content="https://hyperpulseunbound.github.io/html/tecnologias-e-sistemas.html"/>
+    <meta property="og:type" content="website"/>
+    <link rel="icon" type="image/png" href="../imagens/ariagearicon.png">
+    <link rel="preload" href="../imagens/nexlink.jpeg" as="image">
+    <link rel="preload" href="../fonts/Merriweather-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/Teko-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+
+<nav>
+    <div class="menu">
+        <a href="../index.html">Sobre</a>
+        <a href="historia.html">História</a>
+        <a href="mundo.html">Mundo</a>        
+        <a href="personagens.html" class="ativo">Personagens</a>
+        <a href="guia-de-leitura.html">Guia de Leitura</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="nota-do-autor.html">Nota do Autor</a>       
+    </div>
+</nav>
+
+<section>
+    <h1><em>Tecnologias e Sistemas</em></h1>
+
+    <div class="fundo-preto">
+        <h2><em>NeXLink</em></h2>
+        <img src="../imagens/nexlink.jpeg" alt="NeXLink" width="600" height="600" decoding="async">
+        <p><strong><em><span style="color: #e8b923;">História:</span></em></strong> Após a missão em que conheceu Igneus, Drake, Gale e Selena e juntos formaram os Pulsebreakers, Aria desenvolveu o NeXLink como um meio de manter a equipe conectada em qualquer situação. Com o tempo, o NeXLink deixou de ser apenas uma ferramenta e passou a representar confiança, tornando-se um símbolo de aliança entre aqueles que lutam pelo mesmo objetivo. Desde então, todo aliado considerado digno, sejam heróis independentes, equipes ou organizações, recebe um NeXLink, permitindo que forças espalhadas pelo mundo se unam rapidamente sempre que uma emergência surgir.</p>
+    </div>
+
+    <div class="fundo-preto">
+        <h2><em>Reon</em></h2>
+        <img src="../imagens/reon.jpeg" alt="Reon" width="600" height="600" loading="lazy" decoding="async">
+        <p><strong><em><span style="color: #e8b923;">História:</span></em></strong> No ano de 2003, após décadas marcadas por crises financeiras globais, inflação descontrolada e guerras comerciais, líderes de mais de 180 nações se reuniram na Cúpula Global de Tóquio para criar uma moeda única, estável e acessível para toda a população mundial. Dessa decisão nasceu o Reon, projetado para funcionar como a base de um sistema financeiro global unificado. O Reon passou a operar tanto em formato físico, como notas, cartões e dispositivos portáteis, quanto em transações digitais instantâneas altamente seguras, permitindo que qualquer pessoa enviasse ou recebesse dinheiro em segundos, a qualquer hora e em qualquer lugar do mundo. A transição ocorreu rapidamente, e entre 2003 e 2006 todas as moedas tradicionais, como dólar, euro, real, iene e libra, foram oficialmente descontinuadas, tornando o Reon a única forma de pagamento aceita globalmente, desde pequenas compras do cotidiano até grandes acordos internacionais. Os valores monetários do Reon são representados pelo padrão internacional R₦, utilizado antes dos números para indicar quantias financeiras, como em R₦ 3,00, R₦ 50,00 ou R₦ 10.000,00.</p>
+    </div>        
+</section>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025-<span id="anoAtual"></span> HyperPulse Unbound. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const ano = new Date().getFullYear();
+document.getElementById("anoAtual").textContent = ano;
+
+document.querySelectorAll("img").forEach(img => {
+  if (!img.closest("section:first-of-type")) {
+    img.setAttribute("loading", "lazy");
+  }
+});
+
+document.addEventListener('click', function(evento) {
+    const dropdown = document.querySelector('.custom-dropdown');
+    if (dropdown) {
+        if (!dropdown.contains(evento.target)) {
+            dropdown.removeAttribute('open');
+        }
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const linksAnimados = document.querySelectorAll('.menu a, .link, .botao-download');
+
+    linksAnimados.forEach(link => {
+        link.addEventListener('click', function(event) {
+            if (!this.href || this.href.includes('#')) return;
+
+            event.preventDefault(); 
+            const destino = this.href;
+            const alvo = this.target;
+
+            this.classList.add('clicado');
+
+            setTimeout(() => {
+                if (alvo === '_blank') {
+                    window.open(destino, '_blank');
+                    this.classList.remove('clicado');
+                    this.blur();
+                } else {
+                    window.location.href = destino;
+                }
+            }, 400); 
+        });
+    });
+});
+
+window.addEventListener('pageshow', () => {
+    document.querySelectorAll('.clicado').forEach(el => {
+        el.classList.remove('clicado');
+        el.blur();
+    });
+    
+    if (document.activeElement) {
+        document.activeElement.blur();
+    }
+
+    document.body.style.pointerEvents = 'none';
+    setTimeout(() => {
+        document.body.style.pointerEvents = '';
+    }, 100);
+});
+</script>
+
+</body>
+</html>
