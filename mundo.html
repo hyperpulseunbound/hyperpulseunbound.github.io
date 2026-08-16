@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo - HyperPulse Unbound</title>
+    <meta property="og:title" content="Mundo - HyperPulse Unbound"/>
+    <meta property="og:description" content="Explore o mundo de HyperPulse Unbound: uma Terra 10% maior repleta de tecnologia avançada, mistérios arcanos, megacidades, biomas extremos e dimensões paralelas."/>
+    <meta property="og:image" content="https://hyperpulseunbound.github.io/imagens/zxcapa03.jpg"/>
+    <meta property="og:url" content="https://hyperpulseunbound.github.io/mundo"/>
+    <meta property="og:type" content="website"/>
+    <link rel="icon" type="image/png" href="../imagens/ariagearicon.png">
+    <link rel="preload" href="../imagens/mundo.jpeg" as="image">
+    <link rel="preload" href="../fonts/Merriweather-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/Teko-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+
+<nav>
+    <div class="menu">
+        <a href="../index.html">Sobre</a>
+        <a href="historia.html">História</a>
+        <a href="mundo.html" class="ativo">Mundo</a>        
+        <a href="personagens.html">Personagens</a>
+        <a href="guia-de-leitura.html">Guia de Leitura</a>
+        <a href="capitulos.html">Capítulos</a>
+        <a href="nota-do-autor.html">Nota do Autor</a>       
+    </div>
+</nav>
+
+<section>
+    <h1><em>Mundo</em></h1>
+    <img src="../imagens/mundo.jpeg" alt="Mundo" width="600" height="600" decoding="async">
+    <p>O mundo de HyperPulse Unbound é feito de contrastes fortes, onde tecnologia avançada existe lado a lado com mistérios arcanos muito antigos. Situada em uma Terra aproximadamente 10% maior que a do nosso universo, a história se desenrola em um planeta repleto de regiões inexploradas, ecossistemas extremos e paisagens impressionantes. Parte da história acontece no Canadá, em lugares como Skyreach City, onde os Pulsebreakers tentam levar uma vida comum, e no Pulse Bastion, a base e o lar da equipe escondida no coração das florestas da Venerable Verdure, uma cordilheira de montanhas colossais ao norte da cidade. Mas a trama vai muito além disso: a jornada leva os protagonistas pelos quatro cantos do mundo, passando por desertos brutais, selvas fechadas, cidades futuristas, ruínas antigas, vulcões ativos, cavernas perigosas, terras congeladas, planetas alienígenas e até dimensões paralelas onde as regras da realidade simplesmente não fazem sentido.</p>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025-<span id="anoAtual"></span> HyperPulse Unbound. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const ano = new Date().getFullYear();
+document.getElementById("anoAtual").textContent = ano;
+
+document.querySelectorAll("img").forEach(img => {
+  if (!img.closest("section:first-of-type")) {
+    img.setAttribute("loading", "lazy");
+  }
+});
+
+document.addEventListener('click', function(evento) {
+    const dropdown = document.querySelector('.custom-dropdown');
+    if (dropdown) {
+        if (!dropdown.contains(evento.target)) {
+            dropdown.removeAttribute('open');
+        }
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const linksAnimados = document.querySelectorAll('.menu a, .link, .botao-download');
+
+    linksAnimados.forEach(link => {
+        link.addEventListener('click', function(event) {
+            if (!this.href || this.href.includes('#')) return;
+
+            event.preventDefault(); 
+            const destino = this.href;
+            const alvo = this.target;
+
+            this.classList.add('clicado');
+
+            setTimeout(() => {
+                if (alvo === '_blank') {
+                    window.open(destino, '_blank');
+                    this.classList.remove('clicado');
+                    this.blur();
+                } else {
+                    window.location.href = destino;
+                }
+            }, 400); 
+        });
+    });
+});
+
+window.addEventListener('pageshow', () => {
+    document.querySelectorAll('.clicado').forEach(el => {
+        el.classList.remove('clicado');
+        el.blur();
+    });
+    
+    if (document.activeElement) {
+        document.activeElement.blur();
+    }
+
+    document.body.style.pointerEvents = 'none';
+    setTimeout(() => {
+        document.body.style.pointerEvents = '';
+    }, 100);
+});
+</script>
+
+</body>
+</html>
